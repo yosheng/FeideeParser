@@ -1,0 +1,20 @@
+@inherits IndexBase
+
+@page "/"
+
+<div class="container center" style="position: relative; top: 100px">
+    <h1 style="text-align: center">随手记帐单转换工具</h1>
+    <ValidateForm Model="@ParseBill" OnValidSubmit="OnSubmit">
+        <div class="row g-3">
+            <div class="col-12">
+                <Select IsClearable @bind-Value="@ParseBill.BillType" ShowSearch="true" PlaceHolder="请选择" ShowLabel="true"></Select>
+            </div>
+            <div class="col-12">
+                <InputUpload @bind-Value="@ParseBill.UploadFile" ShowDeleteButton="true" ValidateRules="@CustomerRules"/>
+            </div>
+            <div class="col-12" style="text-align: center">
+                <Button ButtonType="@ButtonType.Submit" Text="转换"></Button>
+            </div>
+        </div>
+    </ValidateForm>
+</div>
