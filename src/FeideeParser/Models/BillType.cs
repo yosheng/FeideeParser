@@ -12,7 +12,7 @@ public enum BillType
     WeChat = 1,
     
     /// <summary>
-    /// 中国农业银行
+    /// 支付宝
     /// </summary>
     [Display(Name = "支付宝", Description = "登入支付宝查看全部交易纪录导出")]
     [ValidFileType("csv")]
@@ -24,6 +24,13 @@ public enum BillType
     [Display(Name = "中国农业银行", Description = "登入农业银行网页中导出帐务明细格式为xls")]
     [ValidFileType("xls")]
     AbChina = 3,
+    
+    /// <summary>
+    /// 中国工商银行
+    /// </summary>
+    [Display(Name = "中国工商银行", Description = "登入工商银行网页中导出帐务明细格式为csv")]
+    [ValidFileType("csv")]
+    Icbc = 4,
 }
 
 [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]

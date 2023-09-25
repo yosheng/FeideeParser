@@ -12,6 +12,7 @@ public static class ExportBillFactory
             BillType.WeChat => new WeChatBillHandler(),
             BillType.AliPay => new ALiPayBillHandler(),
             BillType.AbChina => new AbChinaBillHandler(),
+            BillType.Icbc => new IcbcBillHandler(),
             _ => throw new ArgumentOutOfRangeException(nameof(billType), billType, null)
         };
 

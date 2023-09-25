@@ -9,6 +9,7 @@ public class ExportBillFactoryTest
     [InlineData("Wechat.csv", BillType.WeChat)]
     [InlineData("Alipay.csv", BillType.AliPay)]
     [InlineData("AbChina.xls", BillType.AbChina)]
+    [InlineData("Icbc.csv", BillType.Icbc)]
     public void ParseSuiBill(string fileName, BillType billType)
     {
         System.Text.Encoding.RegisterProvider (System.Text.CodePagesEncodingProvider.Instance);
