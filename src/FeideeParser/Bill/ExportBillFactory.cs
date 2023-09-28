@@ -13,6 +13,7 @@ public static class ExportBillFactory
             BillType.AliPay => new ALiPayBillHandler(),
             BillType.AbChina => new AbChinaBillHandler(),
             BillType.Icbc => new IcbcBillHandler(),
+            BillType.Cmb => new CmbBillHandler(),
             _ => throw new ArgumentOutOfRangeException(nameof(billType), billType, null)
         };
 

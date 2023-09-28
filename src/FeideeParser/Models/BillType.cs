@@ -31,6 +31,13 @@ public enum BillType
     [Display(Name = "中国工商银行", Description = "登入工商银行网页中导出帐务明细格式为csv")]
     [ValidFileType("csv")]
     Icbc = 4,
+    
+    /// <summary>
+    /// 招商银行
+    /// </summary>
+    [Display(Name = "招商银行", Description = "登入招商银行网页中导出帐务明细格式为csv")]
+    [ValidFileType("csv")]
+    Cmb = 5,
 }
 
 [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]

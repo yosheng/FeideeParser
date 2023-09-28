@@ -10,6 +10,7 @@ public class ExportBillFactoryTest
     [InlineData("Alipay.csv", BillType.AliPay)]
     [InlineData("AbChina.xls", BillType.AbChina)]
     [InlineData("Icbc.csv", BillType.Icbc)]
+    [InlineData("Cmb.csv", BillType.Cmb)]
     public void ParseSuiBill(string fileName, BillType billType)
     {
         System.Text.Encoding.RegisterProvider (System.Text.CodePagesEncodingProvider.Instance);
