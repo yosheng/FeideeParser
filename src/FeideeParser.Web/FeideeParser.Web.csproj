@@ -3,6 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>FeideeParser.Web</RootNamespace>
     <AssemblyName>FeideeParser.Web</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\FeideeParser\FeideeParser.csproj" />
@@ -10,5 +11,6 @@
   <ItemGroup>
     <PackageReference Include="BootstrapBlazor" Version="7.10.8-beta07" />
     <PackageReference Include="BootstrapBlazor.FontAwesome" Version="7.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 </Project>
