@@ -24,7 +24,7 @@ public class ApiController : ControllerBase
     /// <param name="file">原始帐单档案</param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
-    [HttpPost]
+    [HttpPost("{billType}")]
     public FileResult DownloadParseBillFile(BillType billType, IFormFile file)
     {
         if (file == null)
