@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NuGet.Config = NuGet.Config
 		README.md = README.md
 		Dockerfile = Dockerfile
+		.github\workflows\push-docker-image.yaml = .github\workflows\push-docker-image.yaml
 	EndProjectSection
 EndProject
 Global
