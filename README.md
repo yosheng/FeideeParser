@@ -20,4 +20,4 @@ docker pull risenzhang/feideeparser:latest
 # 运行镜像
 docker run --name feideeparser -d -p 52001:5000 risenzhang/feideeparser:latest
 ```
-打开网页，假设部署在本地电脑中输入「http://127.0.0.1:52001」其中端口可以根据自己需求调整
+打开网页，假设部署在本地电脑中输入 http://127.0.0.1:52001 其中端口可以根据自己需求调整
