@@ -1,8 +1,15 @@
 name: Publish FeideeParserWeb to DockerHub
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gif'
+      - '**/*.png'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+      - LICENSE
+      - tests/*
 env:
   REGISTRY: docker.io
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}
