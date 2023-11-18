@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 
 WORKDIR /docker
 EXPOSE 5000
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /build
 COPY . .
 RUN dotnet restore src/FeideeParser.Web/FeideeParser.Web.csproj --configfile ./NuGet.Config
