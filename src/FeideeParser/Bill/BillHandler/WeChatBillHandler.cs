@@ -13,6 +13,7 @@ public class WeChatBillHandler : BillHandlerBase
     {
         var configuration = new CsvConfiguration(CultureInfo.CurrentUICulture)
         {
+            Mode = CsvMode.NoEscape,
             TrimOptions = TrimOptions.Trim,
             HasHeaderRecord = true,
             ShouldSkipRecord = recordArgs =>
@@ -57,7 +58,7 @@ public class WeChatBillHandler : BillHandlerBase
                         SubCategory = "经营所得",
                         SourceAccount = "微信钱包",
                         Amount = decimal.Parse(GetAmount(x.Amount)),
-                        Remark = $"{x.Counterparty}-{x.Merchandise}",
+                        Remark = GetRemark(x),
                     }).ToList();
                 }
             }
@@ -74,13 +75,19 @@ public class WeChatBillHandler : BillHandlerBase
                         SubCategory = "其他支出",
                         SourceAccount = "微信钱包",
                         Amount = decimal.Parse(GetAmount(x.Amount)),
-                        Remark = $"{x.Counterparty}-{x.Merchandise}",
+                        Remark = GetRemark(x),
                     }).ToList();
                 }
             }
         }
 
         return exportTemplate;
+    }
+
+    private static string GetRemark(WeChatBill x)
+    {
+        var remark = $"{x.Counterparty}-{x.Merchandise}";
+        return remark.Replace("\"", "");
     }
 
     private string GetAmount(string amount)
