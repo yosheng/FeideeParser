@@ -19,7 +19,7 @@ public class CmbBillHandler : BillHandlerBase
                 ShouldSkipRecord = recordArgs =>
                 {
                     if (recordArgs.Row[0] == null) return false;
-                    return recordArgs.Row.Parser.RawRecord.Contains(",,,,,,");
+                    return recordArgs.Row.Parser.RawRecord.StartsWith("# ");
                 }
             };
 
@@ -35,6 +35,12 @@ public class CmbBillHandler : BillHandlerBase
                 {
                     continue;
                 }
+                
+                if (csv.Parser.Record[0].StartsWith("# "))
+                {
+                    continue;
+                }
+                
                 records.Add(csv.GetRecord<CmbBill>());
             }
             
